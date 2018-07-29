@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "~/.virtualenvs/yttags/bin/python",
+    "python.jediEnabled": false
+}
