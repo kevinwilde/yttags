@@ -39,7 +39,7 @@ class UserAPI(generics.RetrieveAPIView):
         return self.request.user
 
 class TagsViewSet(viewsets.ModelViewSet):
-    permission_classes = [permissions.IsAuthenticated, ]
+    permission_classes = [permissions.AllowAny, ]
     serializer_class = TagSerializer
 
     def get_queryset(self):
