@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from rest_framework import viewsets, permissions, generics
 from rest_framework.response import Response
 
@@ -37,6 +38,11 @@ class UserAPI(generics.RetrieveAPIView):
 
     def get_object(self):
         return self.request.user
+
+class UserList(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [permissions.AllowAny, ]
 
 class TagsViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.AllowAny, ]

@@ -1,7 +1,7 @@
 from django.conf.urls import url, include
 from rest_framework import routers
 
-from .api import RegistrationAPI, LoginAPI, UserAPI
+from .api import RegistrationAPI, LoginAPI, UserAPI, UserList
 
 router = routers.DefaultRouter()
 
@@ -12,4 +12,5 @@ urlpatterns = [
     url(r'^auth/register/$', RegistrationAPI.as_view()),
     url(r'^auth/login/$', LoginAPI.as_view()),
     url(r'^auth/user/$', UserAPI.as_view()),
+    url(r'^users/$', UserList.as_view())
 ]

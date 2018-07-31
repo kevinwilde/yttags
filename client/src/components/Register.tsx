@@ -1,24 +1,28 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import * as React from "react";
+import { Link } from "react-router-dom";
 import * as auth from '../api/auth';
 
 class Login extends React.Component {
-
-  state = {
-    username: "",
+  public state = {
     password: "",
+    username: "",
   }
 
-  onSubmit = e => {
-    e.preventDefault()
-    auth.login(this.state.username, this.state.password)
-  }
-
-  render() {
+  public render() {
+    // if (this.props.isAuthenticated) {
+    //     return <Redirect to="/" />
+    // }
     return (
       <form onSubmit={this.onSubmit}>
         <fieldset>
-          <legend>Login</legend>
+          <legend>Register</legend>
+          {/* {this.props.errors.length > 0 && (
+            <ul>
+              {this.props.errors.map(error => (
+                <li key={error.field}>{error.message}</li>
+              ))}
+            </ul>
+          )} */}
           <p>
             <label htmlFor="username">Username</label>
             <input
@@ -32,15 +36,20 @@ class Login extends React.Component {
               onChange={e => this.setState({password: e.target.value})} />
           </p>
           <p>
-            <button type="submit">Login</button>
+            <button type="submit">Register</button>
           </p>
 
           <p>
-            Don't have an account? <Link to="/register">Register</Link>
+            Already have an account? <Link to="/login">Login</Link>
           </p>
         </fieldset>
       </form>
     )
+  }
+
+  private onSubmit = (e: any) => {
+    e.preventDefault();
+    auth.register(this.state.username, this.state.password);
   }
 }
 
