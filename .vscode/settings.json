@@ -1,4 +1,15 @@
 {
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
     "python.pythonPath": "~/.virtualenvs/yttags/bin/python",
-    "python.jediEnabled": false
+    "python.jediEnabled": false,
+    "[python]": {
+        "editor.tabSize": 4
+    },
+    "[typescript]": {
+        "editor.tabSize": 2
+    },
+    "[javascript]": {
+        "editor.tabSize": 2
+    }
 }
