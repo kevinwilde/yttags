@@ -1,10 +1,23 @@
 {
-  // "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
-  "extends": [],
+  "extends": [
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-plugin-prettier",
+    "tslint-config-prettier"
+  ],
   "linterOptions": {
     "exclude": [
       "config/**/*.js",
       "node_modules/**/*.ts"
     ]
+  },
+  "rules": {
+    "prettier": [true, "prettier.config.js"],
+    "interface-name": false,
+    "no-empty-interface": false,
+    "jsx-no-lambda": false,
+    "indent": [true, "spaces", 2],
+    "semicolon": [true, "never"],
+    "quotemark": false
   }
 }

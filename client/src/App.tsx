@@ -1,12 +1,12 @@
-import * as React from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
-import './App.css';
-import Login from "./components/Login";
-import NotFound from "./components/NotFound";
-import Register from "./components/Register";
-import UserList from './components/UserList';
+import * as React from 'react'
+import { HashRouter, Route, Switch } from 'react-router-dom'
+import './App.css'
+import Login from './components/Login'
+import NotFound from './components/NotFound'
+import Register from './components/Register'
+import UserList from './components/UserList'
 
-import logo from './logo.svg';
+import logo from './logo.svg'
 
 class App extends React.Component {
   public render() {
@@ -29,8 +29,8 @@ class App extends React.Component {
           </Switch>
         </HashRouter>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

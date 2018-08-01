@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'react'
 
 interface User {
   id: number
@@ -13,29 +13,29 @@ interface State {
 
 class UserList extends React.Component<Props, State> {
   constructor(props: Props) {
-    super(props);
+    super(props)
     this.state = {
-      users: []
-    };
+      users: [],
+    }
   }
 
   public componentDidMount() {
     fetch('/api/users/').then((resp) => {
       if (resp.status === 200) {
-        resp.json().then(json => {
+        resp.json().then((json) => {
           // console.log(json);
-          this.setState({users: json});
+          this.setState({ users: json })
         })
-      // } else {
+        // } else {
         // console.error(resp);
       }
-  });
+    })
   }
 
   public render() {
-    const users = this.state.users.map(u => <li key={u.id}>{u.username}</li>);
-    return <ul>{users}</ul>;
+    const users = this.state.users.map((u) => <li key={u.id}>{u.username}</li>)
+    return <ul>{users}</ul>
   }
 }
 
-export default UserList;
+export default UserList

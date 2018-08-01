@@ -4,8 +4,8 @@ import * as auth from '../api/auth'
 
 class Login extends React.Component {
   public state = {
-    password: "",
-    username: "",
+    password: '',
+    username: '',
   }
 
   public render() {
@@ -16,14 +16,18 @@ class Login extends React.Component {
           <p>
             <label htmlFor="username">Username</label>
             <input
-              type="text" id="username"
-              onChange={e => this.setState({username: e.target.value})} />
+              type="text"
+              id="username"
+              onChange={(e) => this.setState({ username: e.target.value })}
+            />
           </p>
           <p>
             <label htmlFor="password">Password</label>
             <input
-              type="password" id="password"
-              onChange={e => this.setState({password: e.target.value})} />
+              type="password"
+              id="password"
+              onChange={(e) => this.setState({ password: e.target.value })}
+            />
           </p>
           <p>
             <button type="submit">Login</button>
