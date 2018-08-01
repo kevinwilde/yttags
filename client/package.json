@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -102,7 +102,7 @@
     ],
     "globals": {
       "ts-jest": {
-        "tsConfigFile": "/home/kevinwilde/Documents/frontend/tsconfig.test.json"
+        "tsConfigFile": "./tsconfig.test.json"
       }
     }
   },
