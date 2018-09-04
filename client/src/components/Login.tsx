@@ -1,14 +1,24 @@
 import * as React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import * as auth from '../api/auth'
 
-class Login extends React.Component {
+interface State {
+  username: string
+  password: string
+  isLoggedIn: boolean
+}
+
+class Login extends React.Component<{}, State> {
   public state = {
-    password: '',
     username: '',
+    password: '',
+    isLoggedIn: auth.isLoggedIn(),
   }
 
   public render() {
+    if (this.state.isLoggedIn) {
+      return <Redirect to="/" />
+    }
     return (
       <form onSubmit={this.onSubmit}>
         <fieldset>
@@ -41,9 +51,10 @@ class Login extends React.Component {
     )
   }
 
-  private onSubmit = (e: any) => {
+  private onSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    auth.login(this.state.username, this.state.password)
+    await auth.login(this.state.username, this.state.password)
+    this.setState({ isLoggedIn: auth.isLoggedIn() })
   }
 }
 

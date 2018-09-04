@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import * as auth from '../api/auth'
 
 class Login extends React.Component {
@@ -9,9 +9,9 @@ class Login extends React.Component {
   }
 
   public render() {
-    // if (this.props.isAuthenticated) {
-    //     return <Redirect to="/" />
-    // }
+    if (auth.isLoggedIn()) {
+      return <Redirect to="/" />
+    }
     return (
       <form onSubmit={this.onSubmit}>
         <fieldset>

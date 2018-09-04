@@ -18,6 +18,7 @@
     "jsx-no-lambda": false,
     "indent": [true, "spaces", 2],
     "semicolon": [true, "never"],
-    "quotemark": false
+    "quotemark": false,
+    "object-literal-sort-keys": false
   }
 }
